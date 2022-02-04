@@ -20,29 +20,32 @@ let board, turn, winner
 	
 	// 2.1) Store the 9 elements that represent the squares on the page.
 	  // You may want to give each square a class name in your HTML to make this easier!
-	let topLeft = document.querySelector('#sq0')
-	
-	let topMid = document.querySelector('#sq1')
-	
-	let topRight = document.querySelector('#sq2')
-	
-	let midLeft = document.querySelector('#sq3')
-
-	let midMid = document.querySelector('#sq4')
-	
-	let midRight = document.querySelector('#sq5')
-	
-	let btmLeft = document.querySelector('#sq6')
-	
-	let btmMid = document.querySelector('#sq7')
-	
-	let btmRight = document.querySelector('#sq8')
+	const topLeft = document.querySelector('#sq0')
+	const topMid = document.querySelector('#sq1')
+	const topRight = document.querySelector('#sq2')
+	const midLeft = document.querySelector('#sq3')
+	const midMid = document.querySelector('#sq4')
+	const midRight = document.querySelector('#sq5')
+	const btmLeft = document.querySelector('#sq6')
+	const btmMid = document.querySelector('#sq7')
+	const btmRight = document.querySelector('#sq8')
+	const reset = document.querySelector('#reset')
 	
 	// 2.2) Store the element that displays the game status on the page.
 
 
 
 //*------------------------ Event Listeners -----------------------------*/
+
+topLeft.addEventListener('click', render)
+topMid.addEventListener('click', render)
+topRight.addEventListener('click', render)
+midLeft.addEventListener('click', render)
+midMid.addEventListener('click', render)
+midRight.addEventListener('click', render)
+btmLeft.addEventListener('click', render)
+btmMid.addEventListener('click', render)
+btmRight.addEventListener('click', render)
 
 
 
@@ -52,26 +55,26 @@ let board, turn, winner
 	// 3.1) Call an initialize function
 init();
 	// 3.2) That initialize function should initialize the state variables:
-	   
 function init() {
 	// 3.2.1) Initialize the board array to 9 nulls to represent empty squares.
 	board = [null, null, null, null, null, null, null, null, null,]
-	board[0]= topLeft
-	board[0])
 	// The 9 elements will "map" to each square.
+	
 	// Index 0 represents the top-left square.
 	    // Index 1 represents the top-middle square.
 			// So on, continuing through the entire board until...
 	    // Index 8 maps to the bottom-right square.
 	// 3.2.2) Initialize whose turn it is to 1 (player 'X'). 
 				// Player 'O' will be represented by -1.
-}
+
 	  // 3.2.3) Initialize the winner variable to null.
 		winner = null;
 	    // This represents that there is no winner or tie yet.
 	    // The winner variable will hold the player value (1 or -1) if there's a winner. 
 	    // The winner will hold a 'T' if there's a tie.
 	  // 3.2.4) Render those state variables to the page by calling a render function.
+		render();
+}
 // 3.3) The render function should:
 function render(){
 	// 3.3.1) Loop over the board array (which represents the squares on the page), and for each iteration:
