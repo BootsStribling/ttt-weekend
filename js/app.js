@@ -4,6 +4,8 @@
 //*------------------------------- Constants -------------------------------*//
 		
 //*---------------------- Cached Element References ------------------------*//
+let h1 = document.querySelector('h1')
+let play = document.querySelector('#play')
 let gameBoard = document.querySelectorAll('.square')
 let sq0 = document.querySelector('#sq0')
 let sq1 = document.querySelector('#sq1')
@@ -16,8 +18,10 @@ let sq7 = document.querySelector('#sq7')
 let sq8 = document.querySelector('#sq8')
 let msg = document.querySelector('#message')
 let reset = document.querySelector('#reset')
+let section = document.querySelector('section')
 
 //*------------------------ Event Listeners -----------------------------*//
+play.addEventListener('click', init)
 sq0.addEventListener('click',handleClick)
 sq1.addEventListener('click',handleClick)
 sq2.addEventListener('click',handleClick)
@@ -29,13 +33,18 @@ sq7.addEventListener('click',handleClick)
 sq8.addEventListener('click',handleClick)
 reset.addEventListener('click', init)
 
-//3--------------------------- Functions 2-------------------------------*//
-//33) Upon loading, the app should3
+//*--------------------------- Functions -------------------------------*//
+pageLoad();
+function pageLoad(){
+	msg.innerText = "Welcome to Tic Tac Toe!"
+	hideboard();
+}
 
-	// 3.1) Call aninitialize function 
-	init();
-	// 3.2) That initialize function should initialize the state variables:
+
 function init(){
+	exposeBoard()
+	h1.setAttribute('hidden', true)
+	play.setAttribute('hidden', false)
 	reset.setAttribute('hidden', true)
 	gameBoard.forEach(sq => sq.innerText = "")
 	board = [ null, null, null, null, null, null, null, null, null]
@@ -44,21 +53,18 @@ function init(){
 	render();
 }
 
-
-// 3.3) The render function should:
-function render() {
-	// 3.3.2.1) If winner has a value other than null (game still in progress), render whose turn it is.
+function render(){
 	if(winner === null){
 		if (turn === 1){
 			msg.innerText = "It is Player X's turn"
+			msg.style.color = 'Blue'
 		}
 		if(turn === -1){
 			msg.innerText = "It is Player O's turn"
+			msg.style.color = 'Orange'
 		}
-		// 3.3.1) Loop over the board array (which represents the squares on the page), and for each iteration:
-		// 3.3.1.1) Use the index of the iteration to access the square in the squares array that corresponds with the current cell being iterated over in the board array
+		
 		for (let i = 0; i < board.length; i ++){
-			// 3.3.1.2) Style that square however you wish dependant on the value contained in the current cell being iterated over (-1, 1, or null)
 			if(board[i] === 1){
 				gameBoard[i].innerText = 'X'
 			}
@@ -78,6 +84,7 @@ function render() {
 	}
 	if(winner === 'T'){
 		msg.innerText = "Cat's Game!"
+		reset.removeAttribute('hidden')
 	}
 }
 
@@ -127,13 +134,28 @@ function getWinner(){
 	}
 }
 
-// 5.7) All state has been updated, so render the state to the page (step 3.3).
+function hideboard() {
+	section.setAttribute('hidden',true)
+	sq0.setAttribute('hidden',true)
+	sq1.setAttribute('hidden',true)
+	sq2.setAttribute('hidden',true)
+	sq3.setAttribute('hidden',true)
+	sq4.setAttribute('hidden',true)
+	sq5.setAttribute('hidden',true)
+	sq6.setAttribute('hidden',true)
+	sq7.setAttribute('hidden',true)
+	sq8.setAttribute('hidden',true)
+}
 
-
-// 6) Handle a player clicking the replay button:
-
-	// 6.1) Add a replay button to the HTML document
-
-	// 6.2) Store the new replay button element
-
-	// 6.3) Do steps 4.1 (initialize the state variables) and 4.2 (render).
+function exposeBoard() {
+	section.removeAttribute('hidden')
+	sq0.removeAttribute('hidden')
+	sq1.removeAttribute('hidden')
+	sq2.removeAttribute('hidden')
+	sq3.removeAttribute('hidden')
+	sq4.removeAttribute('hidden')
+	sq5.removeAttribute('hidden')
+	sq6.removeAttribute('hidden')
+	sq7.removeAttribute('hidden')
+	sq8.removeAttribute('hidden')
+}

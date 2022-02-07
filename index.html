@@ -5,25 +5,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 	<script defer src="./js/app.js"></script>
 	<title>Tic Tac Toe</title>
 </head>
 <body>
 	<h1>Tic-Tac-Toe</h1>
 	<h2 id="message">Message</h2>
-	<button id="play">Play</button>
+	<button id="play" type="button" class="btn btn-primary">Play</button>
 	<section class="board">
-		<!--You may want to give each square a class name in your HTML to make this easier! -->
-		<div class ="square" id="sq0" hidden></div>
-		<div class ="square" id="sq1" hidden></div>
-		<div class ="square" id="sq2" hidden></div>
-		<div class ="square" id="sq3" hidden></div>
-		<div class ="square" id="sq4" hidden></div>
-		<div class ="square" id="sq5" hidden></div>
-		<div class ="square" id="sq6" hidden></div>
-		<div class ="square" id="sq7" hidden></div>
-		<div class ="square" id="sq8" hidden></div>
+		<div class ="square" id="sq0"></div>
+		<div class ="square" id="sq1"></div>
+		<div class ="square" id="sq2"></div>
+		<div class ="square" id="sq3"></div>
+		<div class ="square" id="sq4"></div>
+		<div class ="square" id="sq5"></div>
+		<div class ="square" id="sq6"></div>
+		<div class ="square" id="sq7"></div>
+		<div class ="square" id="sq8"></div>
 	</section>
-	<button id="reset" hidden>Reset</button>  
+	<button id="reset" type="button" class="btn btn-secondary" hidden>Replay</button>
 </body>
 </html>
