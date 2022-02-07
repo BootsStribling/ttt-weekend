@@ -10,8 +10,8 @@ let xWinBank = [
 ]
 let oWinMsg = oWinBank[Math.floor(Math.random() * oWinBank.length)]
 let xWinMsg = xWinBank[Math.floor(Math.random() * xWinBank.length)]
-let xColor = 'blue'
-let oColor = 'orange'
+let xColor = 'cornflowerblue'
+let oColor = 'coral'
 //*---------------------- Cached Element References ------------------------*//
 let body = document.querySelector('body')
 let h1 = document.querySelector('h1')
