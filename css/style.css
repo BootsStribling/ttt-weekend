@@ -1,8 +1,6 @@
 body {
     background-color: black;
 	/* Use a system font, if none are available use an available sans-sarif   font */
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: whitesmoke;
 	margin: 0;
   height: 100vh;
@@ -26,10 +24,17 @@ div {
   font-size: 8vmin;
   text-align: center;
   vertical-align: middle;
-  color: ivory
+  color: ivory;
+  font-family: 'Happy Monkey', sans-serif;
+  line-height: 110px;
 }
 
-#play, #reset, #message {
+#play, #reset, #message, h1{
   margin: 40px;
   text-align: center;
+  font-family: 'Happy Monkey', sans-serif;
+}
+
+#message {
+  font-size: 50px;
 }
