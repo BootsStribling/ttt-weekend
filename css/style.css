@@ -22,8 +22,14 @@ section.board {
 }
 
 div {
-  border: 3px solid whitesmoke;
+  border: 3px solid ivory;
   font-size: 8vmin;
   text-align: center;
   vertical-align: middle;
+  color: ivory
+}
+
+#play, #reset, #message {
+  margin: 40px;
+  text-align: center;
 }

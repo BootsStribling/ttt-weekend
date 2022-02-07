@@ -2,8 +2,18 @@
 //*----------------------- Variables (state) -------------------------------*//
 		let board, turn, winner
 //*------------------------------- Constants -------------------------------*//
-		
+let oWinBank = [
+	"That was O-mazing!",
+]
+let xWinBank = [
+	"What an X-ellent game!"
+]
+let oWinMsg = oWinBank[Math.floor(Math.random() * oWinBank.length)]
+let xWinMsg = xWinBank[Math.floor(Math.random() * xWinBank.length)]
+let xColor = 'blue'
+let oColor = 'orange'
 //*---------------------- Cached Element References ------------------------*//
+let body = document.querySelector('body')
 let h1 = document.querySelector('h1')
 let play = document.querySelector('#play')
 let gameBoard = document.querySelectorAll('.square')
@@ -51,19 +61,21 @@ function init(){
 	turn = 1;
 	winner = null;
 	render();
+	
 }
 
 function render(){
 	if(winner === null){
 		if (turn === 1){
 			msg.innerText = "It is Player X's turn"
-			msg.style.color = 'Blue'
+			msg.style.color = 'ivory'
+			body.style.background = xColor
 		}
 		if(turn === -1){
 			msg.innerText = "It is Player O's turn"
-			msg.style.color = 'Orange'
+			msg.style.color = 'ivory'
+			body.style.backgroundColor = oColor
 		}
-		
 		for (let i = 0; i < board.length; i ++){
 			if(board[i] === 1){
 				gameBoard[i].innerText = 'X'
@@ -75,12 +87,14 @@ function render(){
 	}
 	getWinner();
 	if(winner === 1){
-		msg.innerText = "Player X is the winner!"
+		msg.innerText = xWinMsg
 		reset.removeAttribute('hidden')
+		body.backgroundColor = xColor
 	}
 	if(winner === -1){
-		msg.innerText = "Player O is the winner!"
+		msg.innerText = oWinMsg
 		reset.removeAttribute('hidden')
+		body.backgroundColor = oColor
 	}
 	if(winner === 'T'){
 		msg.innerText = "Cat's Game!"
@@ -89,6 +103,7 @@ function render(){
 }
 
 function handleClick(evt) {
+	body.style.backgroundColor = 'white'
 	let sqId = evt.target.id
 	let index = sqId.substring(2)
 
@@ -96,12 +111,24 @@ function handleClick(evt) {
 		return
 	}
 	if(board[index] !== null){
+		let cheatin = [
+			"Quit tryin to cheat ya cheater!",
+			"If cheating was cool, everyone would do it",
+			"Do you not see that big giant thing right there already?",
+			"Is there something wrong with you?",
+			"Call Kenya National Park, we got a cheetah'",
+			"You're just insistent on trying to cheat aren't you?",
+			"If you're really trying to cheat, then you better hack the code, cause if this all you got, you're really bad at cheatin'"
+		]
+		let cPhrase = cheatin[Math.floor(Math.random() * cheatin.length)]
+		msg.innerText = cPhrase
+		msg.style.color = 'red'
+		body.style.backgroundColor = 'lightpink'
 		return
 	}
 	board[index] = turn
 
 	turn = turn * -1
-
 	render();
 }
 
