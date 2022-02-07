@@ -17,6 +17,7 @@ section.board {
   grid-template-rows: repeat(3, 15vmin);
   grid-template-columns: repeat(3, 15vmin);
   grid-gap: 0vmin;
+  border: 3px solid ivory;
 }
 
 div {
@@ -26,7 +27,7 @@ div {
   vertical-align: middle;
   color: ivory;
   font-family: 'Happy Monkey', sans-serif;
-  line-height: 110px;
+  line-height: 135px;
 }
 
 #play, #reset, #message, h1{

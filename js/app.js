@@ -8,6 +8,13 @@ let oWinBank = [
 let xWinBank = [
 	"What an X-ellent game!"
 ]
+let xMsgBank = [
+	"It's Player X's Turn"
+]
+let oMsgBank = [
+	"It's Player O's Turn"
+]
+
 let oWinMsg = oWinBank[Math.floor(Math.random() * oWinBank.length)]
 let xWinMsg = xWinBank[Math.floor(Math.random() * xWinBank.length)]
 let xColor = 'cornflowerblue'
@@ -67,12 +74,14 @@ function init(){
 function render(){
 	if(winner === null){
 		if (turn === 1){
-			msg.innerText = "It is Player X's turn"
+			let xMsg = xMsgBank[Math.floor(Math.random() * xMsgBank.length)]
+			msg.innerText = xMsg
 			msg.style.color = 'ivory'
 			body.style.background = xColor
 		}
 		if(turn === -1){
-			msg.innerText = "It is Player O's turn"
+			let oMsg = oMsgBank[Math.floor(Math.random() * oMsgBank.length)]
+			msg.innerText = oMsg
 			msg.style.color = 'ivory'
 			body.style.backgroundColor = oColor
 		}
