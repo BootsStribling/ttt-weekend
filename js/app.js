@@ -91,12 +91,14 @@ function render(){
 		msg.style.color = xColor
 		reset.removeAttribute('hidden')
 		body.style.backgroundColor = 'ivory'
+		confetti.start(1000);
 	}
 	if(winner === -1){
 		msg.innerText = oWinMsg
 		msg.style.color = oColor
 		reset.removeAttribute('hidden')
-		body.style.backgroundColor = 'ivory' 
+		body.style.backgroundColor = 'ivory'
+		confetti.start(1000);
 	}
 	if(winner === 'T'){
 		msg.innerText = "Cat's Game!"
