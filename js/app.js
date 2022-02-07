@@ -101,8 +101,12 @@ function render(){
 		confetti.start(1000);
 	}
 	if(winner === 'T'){
-		msg.innerText = "Cat's Game!"
+		msg.innerText = "Well that was boring..."
+		setTimeout(() => {
+			msg.innerText = "Shall we try again?"
+		},2000)
 		reset.removeAttribute('hidden')
+		body.style.backgroundColor = 'gray'
 	}
 }
 
