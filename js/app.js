@@ -53,7 +53,7 @@ reset.addEventListener('click', init)
 //*--------------------------- Functions -------------------------------*//
 pageLoad();
 function pageLoad(){
-	msg.innerText = "Welcome to Tic Tac Toe!"
+	msg.innerText = "Welcome to Tic-Tac-Toe!"
 	hideboard();
 }
 
