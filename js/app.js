@@ -3,7 +3,7 @@
 		let board, turn, winner
 //*------------------------------- Constants -------------------------------*//
 let oWinBank = [
-	"That was O-mazing!",
+	"That was O-mazing!"
 ]
 let xWinBank = [
 	"What an X-ellent game!"
@@ -88,13 +88,15 @@ function render(){
 	getWinner();
 	if(winner === 1){
 		msg.innerText = xWinMsg
+		msg.style.color = xColor
 		reset.removeAttribute('hidden')
-		body.backgroundColor = xColor
+		body.style.backgroundColor = 'ivory'
 	}
 	if(winner === -1){
 		msg.innerText = oWinMsg
+		msg.style.color = oColor
 		reset.removeAttribute('hidden')
-		body.backgroundColor = oColor
+		body.style.backgroundColor = 'ivory' 
 	}
 	if(winner === 'T'){
 		msg.innerText = "Cat's Game!"
